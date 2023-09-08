@@ -1,11 +1,5 @@
 <?php
-include "funciones/conecta.php";
-
-$sql = "SELECT * FROM _prestador WHERE codigo = 214578161";
-
-$res = $conn->query($sql);
-
-$row = $res->fetch_array();
+include "funciones/consulta.php";
 ?>
 
 <!DOCTYPE html>
@@ -16,14 +10,16 @@ $row = $res->fetch_array();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="estilos/estilos.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
 </head>
 
 <body>
     <div class="container">
         <h1>BIENVENIDO AL SISTEMA DE REGISTRO DE HORAS</h1>
         <div class="form">
-            <input type=" text" placeholder="CODIGO" />
-            <input type="submit" value="Entrar">
+            <input type="number" id="codigo" name="codigo" placeholder="CODIGO" />
+            <input type="submit" id="submit" value="Entrar" onclick="recibe(); return false;" disabled>
         </div>
 
         <div class="info">
@@ -41,7 +37,7 @@ $row = $res->fetch_array();
                 <div class="table">
                     <div class="col">
                         <h2 class="table_title first">Prestadores en tiempo</h2>
-                        <p>Victor Manuel Robles Lopez</p>
+                        <p><?php echo $nombre; ?></p>
                     </div>
                     <div class="col">
                         <h2 class="table_title second">Tiempo</h2>
@@ -62,3 +58,41 @@ $row = $res->fetch_array();
 </body>
 
 </html>
+
+
+<script>
+    const input = document.getElementById("codigo")
+    const boton = document.getElementById("submit")
+
+    function disableButton() {
+        if (input.value.length == 9) {
+            boton.removeAttribute("disabled")
+        } else {
+            boton.setAttribute("disabled", "true")
+        }
+    }
+
+    input.addEventListener("input", disableButton)
+
+    function recibe() {
+        var codigo = $('#codigo').val();
+
+        $.ajax({
+            url: 'funciones/consulta.php',
+            type: 'POST',
+            dataType: 'text',
+            data: 'codigo=' + codigo,
+            success: function(res) {
+                if (res == 0) {
+                    console.log("No encontrado")
+                } else {
+                    console.log("Encontrado")
+                }
+            },
+            error: function() {
+                console.log("Error ");
+            }
+
+        });
+    }
+</script>
