@@ -28,7 +28,7 @@
 .table_container {
     display: flex;
     justify-content: center;
-    
+
 }
 
 .list_title {
@@ -58,5 +58,8 @@
 }
 
 .second {
-    border-left: none;
+}
+
+.third{
+
 }
