@@ -3,6 +3,11 @@
     padding: 0;
 }
 
+body{
+
+  background-color: radial-gradient(rgb(201, 201, 201) 1px, transparent 0);
+}
+
 .container {
     display: flex;
     align-items: center;
@@ -11,6 +16,33 @@
     max-width: 1600px;
     margin: auto;
     padding-top: 4rem;
+}
+
+.header-container{
+  display: flex;
+  background-color: black;
+  min-height: 100px;
+  width: 100%;
+  align-items: center;
+}
+
+.containerH{
+  display: flex;
+  width: 90%;
+  max-width: 1600px;
+  justify-content: space-around;
+  margin: 0 auto;
+  align-items:center;
+}
+
+.containerH img{
+  width: 400px
+}
+
+.logo{
+  background-color: white;
+  width: 100px;
+  height: 50px;
 }
 
 .form {
@@ -28,7 +60,7 @@
 .table_container {
     display: flex;
     justify-content: center;
-    
+
 }
 
 .list_title {
@@ -45,18 +77,59 @@
     display: flex;
 }
 
+
+
 .table_title {
     padding: 10px;
     border: 1px solid black;
     background-color: gray;
     font-weight: bold;
     font-size: 1.2rem;
+    text-align: center;
 }
 
 .first {
-    border-right: none;
+  border-right: none;
 }
 
 .second {
-    border-left: none;
+  border-right: none;
+  border-left: none;
 }
+
+.third{
+  border-left: none;
+
+}
+
+.table p {
+  width: 100%;
+  text-align: center;
+}
+
+input[type = "submit"]{
+  background-color: green;
+  font-weight: bold;
+  color: black;
+  border-radius: 0.5rem;
+  padding: 5px 10px;
+  margin-left: 5px;
+}
+
+input[type = "number"]{
+  padding: 5px 20px;
+  -moz-appearance:textfield;
+}
+
+.col p{
+  padding: 5px 10px;
+}
+
+h1{
+  font-family:cursive;
+}
+/* input[type = "number"]{
+  padding: 5px 20px;
+
+  appearance:none;
+} */
