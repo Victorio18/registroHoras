@@ -1,7 +1,10 @@
 <?php
+
 $servername = "localhost";
 $username = "root";
-$database = "registroHoras";
-$password = "";
+$database = "_prestador";
+$password = "cuceimobile";
 
 $conn =  new mysqli($servername, $username, $password, $database);
+
+?>
