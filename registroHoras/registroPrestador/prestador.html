@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../estilos/estilos.css">
+    <script src="../jquery/jquery-3.7.1.min.js" charset="utf-8"></script>
+
+</head>
+<body>
+
+  <div class="header-container">
+      <div class="containerH">
+          <div>
+              <img src="../images/logo-udg-cucei.png" alt="logoCucei">
+          </div>
+          <div >
+              <img src="../images/cuceimobilelogo.png" alt="logoCuceiMobile">
+          </div>
+      </div>
+  </div>
+
+    <div class="container">
+        <form name="forma01" class="ingresar" enctype="multipart/form-data">
+            <h1 class="title_form">Registro prestadores</h1>
+            <div class="linea">
+                <!-- <label for="Nombre">Nombre</label> -->
+                <input type="text" name="nombre" id="nombre" placeholder="Nombre">
+            </div>
+            <div class="linea">
+                <!-- <label for="Codigo">Codigo</label> -->
+                <input type="number" name="codigo" id="codigo" placeholder="Código">
+            </div>
+
+            <div class="linea">
+
+                <select name="carrera" id="carrera">
+                  <option value="0">Selecciona</option>
+                  <option value="1">INNI</option>
+                  <option value="2">INCO</option>
+                </select>
+            </div>
+
+
+            <div class="registrar_dv">
+                <input type="button" class="registrar_btn" onclick="recibe(); return false;" value="Registrar">
+
+            </div>
+
+
+
+        </form>
+
+        <a href="../index.php" class="linkRegistrar">Regresar</a>
+    </div>
+
+    <footer class="footerPrestador">
+
+      <p>© UDG Todos los derechos reservados | Powered by [_cuceimobile]</p>
+
+    </footer>
+</body>
+</html>
+
+
+<script src="recibePrestador.js"></script>
