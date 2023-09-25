@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $database = "_prestador";
-$password = "cuceimobile";
+$password = $password;
 
 $conn =  new mysqli($servername, $username, $password, $database);
 
